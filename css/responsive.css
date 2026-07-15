@@ -107,6 +107,16 @@ html, body {
     .client-logo-box {
         margin-bottom: 1rem;
     }
+
+    /* Fix hero section 3-column text overlap on mobile */
+    .hero-section .row.mt-5 .col-4 h2 {
+        font-size: 1.25rem;
+    }
+    
+    .hero-section .row.mt-5 .col-4 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 
 /* SMALL MOBILE DEVICES (Max 575px) */
@@ -148,5 +158,13 @@ html, body {
     /* Adjust carousel size on mobile */
     .swiper-slide {
         padding: 0 10px;
+    }
+
+    /* Further reduce hero highlights for very small screens */
+    .hero-section .row.mt-5 .col-4 h2 {
+        font-size: 1rem;
+    }
+    .hero-section .row.mt-5 .col-4 p.small {
+        font-size: 0.75rem;
     }
 }
