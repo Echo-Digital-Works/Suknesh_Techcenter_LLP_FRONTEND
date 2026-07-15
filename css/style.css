@@ -1,0 +1,392 @@
+/* =====================================================
+   Suknesh Techcenter LLP - Premium Corporate Style
+===================================================== */
+
+:root {
+    --primary-blue: #00778B;
+    --engineering-green: #168A4A;
+    --gold-accent: #F2B705;
+    --dark: #102027;
+    --text: #4b5563;
+    --light: #f7fafc;
+    --white: #ffffff;
+    --shadow-soft: 0 15px 45px rgba(16, 32, 39, 0.10);
+    --shadow-hover: 0 24px 60px rgba(0, 119, 139, 0.18);
+    --radius-lg: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark);
+    line-height: 1.25;
+}
+
+.text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6 {
+    color: inherit;
+}
+
+a {
+    color: var(--primary-blue);
+}
+
+.navbar {
+    padding: 14px 0;
+}
+
+@keyframes spin3D {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+.navbar-brand img {
+    max-height: 70px;
+    object-fit: contain;
+}
+
+.logo-spinner {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    transform-style: preserve-3d;
+    animation: spin3D 6s linear infinite;
+}
+
+.logo-spinner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    backface-visibility: hidden;
+}
+
+.logo-spinner .logo-back {
+    transform: rotateY(180deg);
+}
+
+.nav-link {
+    font-weight: 600;
+    color: var(--dark) !important;
+    margin: 0 4px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #f26522 !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue), #00596b);
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,119,139,0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--engineering-green), #0c6f38);
+    border: none;
+}
+
+.btn-warning {
+    background: var(--gold-accent);
+    border: none;
+    color: #111 !important;
+}
+
+section {
+    position: relative;
+}
+
+.hero-section {
+    background:
+        radial-gradient(circle at top right, rgba(22,138,74,.16), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(0,119,139,.16), transparent 35%),
+        linear-gradient(135deg, #ffffff 0%, #eef8fa 100%);
+}
+
+.hero-logo {
+    max-width: 520px;
+    filter: drop-shadow(0 30px 50px rgba(0,0,0,.12));
+}
+
+.badge {
+    font-weight: 600;
+    letter-spacing: .3px;
+}
+
+.card {
+    border-radius: var(--radius-lg);
+    transition: all .28s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    transition: all 0.75s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover) !important;
+}
+
+.card:hover::before {
+    animation: glimmer 0.8s ease-in-out forwards;
+}
+
+@keyframes glimmer {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+.shadow,
+.shadow-sm,
+.shadow-lg {
+    box-shadow: var(--shadow-soft) !important;
+}
+
+.bg-primary {
+    background: var(--primary-blue) !important;
+}
+
+.bg-success {
+    background: var(--engineering-green) !important;
+}
+
+.text-primary {
+    color: var(--primary-blue) !important;
+}
+
+.text-success {
+    color: var(--engineering-green) !important;
+}
+
+.text-warning {
+    color: var(--gold-accent) !important;
+}
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    transition: opacity .4s ease, visibility .4s ease;
+}
+
+#loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content img {
+    animation: pulseLogo 1.8s infinite ease-in-out;
+}
+
+.ratio video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-section h4,
+.footer-section h5 {
+    color: #ffffff;
+}
+
+.footer-section {
+    background:
+        linear-gradient(135deg, #071b22, #0a3d46 55%, #062027) !important;
+}
+
+.footer-section a:hover {
+    color: var(--gold-accent) !important;
+}
+
+#backToTop {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 46px;
+    height: 46px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+}
+
+#backToTop.show {
+    display: inline-flex;
+}
+
+input.form-control {
+    border-radius: 999px 0 0 999px;
+}
+
+.input-group .btn {
+    border-radius: 0 999px 999px 0;
+}
+
+/* Mixed Video Crossfade Effect */
+.video-crossfade {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+.video-crossfade img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeAnimation 12s infinite ease-in-out;
+}
+.video-crossfade img:nth-child(1) { animation-delay: 0s; }
+.video-crossfade img:nth-child(2) { animation-delay: 4s; }
+.video-crossfade img:nth-child(3) { animation-delay: 8s; }
+
+@keyframes fadeAnimation {
+    0%   { opacity: 0; transform: scale(1.05); }
+    10%  { opacity: 1; transform: scale(1); }
+    33%  { opacity: 1; transform: scale(1); }
+    43%  { opacity: 0; transform: scale(1.05); }
+    100% { opacity: 0; transform: scale(1.05); }
+}
+
+/* Navbar Interaction Effects */
+.navbar-brand {
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), text-shadow 0.2s ease;
+    display: inline-block;
+}
+.navbar-brand:active {
+    transform: scale(0.9) rotate(-2deg);
+    text-shadow: 0 0 15px rgba(25, 135, 84, 0.6);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease, transform 0.1s ease;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0px;
+    left: 50%;
+    background-color: #f26522;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: calc(100% - 1rem);
+}
+.nav-link:active {
+    transform: scale(0.92);
+}
+
+/* 3D Hover Animations for Vision/Mission/Core Values */
+.card-3d-hover {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease !important;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card-3d-hover:hover {
+    transform: rotateX(8deg) rotateY(-8deg) scale3d(1.05, 1.05, 1.05) !important;
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.15) !important;
+    z-index: 10;
+}
+
+.card-3d-hover i {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-3d-hover:hover i {
+    transform: translateZ(50px) scale(1.2);
+}
+
+/* 3D and 2D Animations for Popup Modals */
+.modal.modal-3d.fade .modal-dialog {
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease;
+    transform: perspective(1200px) rotateX(-30deg) rotateY(20deg) scale(0.7) translateZ(-100px);
+    opacity: 0;
+}
+
+.modal.modal-3d.show .modal-dialog {
+    transform: perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1) translateZ(0);
+    opacity: 1;
+}
+
+/* Beautiful new style for the modal content */
+.modal.modal-3d .modal-content {
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.05) !important;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ffffff, #f3f4f6);
+}
+
+.modal.modal-3d .modal-header {
+    background: linear-gradient(90deg, #f8f9fa, #ffffff);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.modal.modal-3d .modal-body img {
+    transition: transform 0.5s ease;
+}
+
+.modal.modal-3d.show .modal-body img {
+    animation: popImage 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes popImage {
+    0% { transform: scale(0.8) translateY(20px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Force Modal Size Reduction */
+.modal.modal-3d .modal-dialog {
+    max-width: 550px !important;
+}
+
+/* Prevent Background Scrolling when Modal is Open */
+body.modal-open {
+    overflow: hidden !important;
+    height: 100vh !important;
+    touch-action: none;
+}
