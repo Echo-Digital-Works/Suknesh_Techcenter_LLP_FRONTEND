@@ -1,4 +1,4 @@
-// Suknesh Techcenter LLP - Main JS
+// Suknesh Techcenter - Main JS
 
 document.addEventListener("DOMContentLoaded", function () {
     const loader = document.getElementById("loader");
